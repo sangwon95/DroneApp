@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "723403783394",
+    "firebase_url": "https://fifth-trainer-268107.firebaseio.com",
+    "project_id": "fifth-trainer-268107",
+    "storage_bucket": "fifth-trainer-268107.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723403783394:android:514a1106ef22570629b2bb",
+        "android_client_info": {
+          "package_name": "com.example.firebaesactivity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "723403783394-nask7l5f34dn63bpbmmarcu5u1gqrc22.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.firebaesactivity",
+            "certificate_hash": "dd85f47257dc40af85128ba13515703befa9c1ab"
+          }
+        },
+        {
+          "client_id": "723403783394-slegn2jebt6r97mmufhc2p76135k21o2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkIXM100wFJ-980guiiMtEQtv1-brvi44"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "723403783394-slegn2jebt6r97mmufhc2p76135k21o2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
