@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">FireBaesActivity</string>
+    <string name="app_name">Done GPS</string>
+    <string name="facebook_app_id">1448539285349788</string>
+    <string name="fb_login_protocol_scheme">fb1448539285349788</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

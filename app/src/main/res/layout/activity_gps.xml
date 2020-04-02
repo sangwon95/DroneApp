@@ -8,35 +8,53 @@
     android:orientation="vertical"
     android:layout_gravity="center">
     <Button
-        android:id="@+id/gps_get"
+        android:id="@+id/sent_data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="get"
+        android:text="graph data send"
         android:layout_gravity="center"
         />
-    <Button
-        android:id="@+id/gps_send_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="send"
-        android:layout_gravity="center"
-        />
-    <Button
-        android:id="@+id/gps_return_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="return"
-        android:layout_gravity="center"
-        />
+
     <TextView
         android:id="@+id/text_view1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="50dp"
         android:hint="위도"/>
     <TextView
         android:id="@+id/text_view2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:hint="경도"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+        <Button
+            android:id="@+id/gps_get"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="get"
+            android:layout_gravity="center"
+            />
+        <Button
+            android:id="@+id/gps_send_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="send"
+            android:layout_gravity="center"
+            />
+        <Button
+            android:id="@+id/gps_return_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="return"
+            android:layout_gravity="center"
+            />
+
+
+    </LinearLayout>
+
 
 </LinearLayout>

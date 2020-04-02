@@ -1,10 +1,12 @@
 package com.example.firebaesactivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -26,8 +28,7 @@ import java.util.regex.Pattern;
 
 public class NewRegisterActivity extends AppCompatActivity {
 
-    private EditText id_edt_acc, pass_edt_acc, name_edt_acc,code_edit_acc;
-    private Button overlap_check_btn;
+    private EditText id_edt_acc, pass_edt_acc, name_edt_acc;
     private LinearLayout account_complete_btn,cancel_btn;
 
     private String email = "";
@@ -38,10 +39,7 @@ public class NewRegisterActivity extends AppCompatActivity {
 
     // 비밀번호 정규식
     private static final Pattern PASSWORD_PATTERN = Pattern.compile("^[a-zA-Z0-9!@.#$%^&*?_~]{4,16}$");
-/*
-    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(); //firebaseDatabase를 사용하기위한 instanec가져오기
-    private DatabaseReference databaseReference = firebaseDatabase.getReference();
-*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,14 +49,13 @@ public class NewRegisterActivity extends AppCompatActivity {
         id_edt_acc = findViewById(R.id.email_edit_acc);
         pass_edt_acc = findViewById(R.id.pass_edit_acc);
         name_edt_acc = findViewById(R.id.name_edit_acc);
-        code_edit_acc = findViewById(R.id.code_edit_acc);
+
 
         //Button
-        overlap_check_btn = findViewById(R.id.overlap_check_btn);
-        account_complete_btn = findViewById(R.id.account_Linear_btn);
+        account_complete_btn = findViewById(R.id.complete_btn_acc);
         cancel_btn = findViewById(R.id.cancel_Linear_acc);
 
-         firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
 
 
         cancel_btn.setOnClickListener(new View.OnClickListener() {
@@ -76,14 +73,27 @@ public class NewRegisterActivity extends AppCompatActivity {
                 email = id_edt_acc.getText().toString();
                 password = pass_edt_acc.getText().toString();
                 name = name_edt_acc.getText().toString();
-                if(isValidEamil()&&isValidPasswd())
-                createUser(email, password);
-                //sendData(email,password,name);
+                if(isValidEamil() && isValidPasswd()&& isValidName()){
+                    InputMethodManager mInputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    mInputMethodManager.hideSoftInputFromWindow(name_edt_acc.getWindowToken(),0);
+                    createUser(email,password);
+                }
+
             }
         });
     }
 
-    private boolean isValidPasswd() {
+    private boolean isValidName(){
+        if(name.isEmpty()){
+            Toast.makeText(getApplicationContext(),"이름을 작성해주세요.",Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+    private boolean isValidEamil() {
         if (email.isEmpty())
         {
             Toast.makeText(getApplicationContext(),"이메일이 비어 있습니다.",Toast.LENGTH_SHORT).show();
@@ -99,7 +109,7 @@ public class NewRegisterActivity extends AppCompatActivity {
         }
     }
 
-    private boolean isValidEamil() {
+    private boolean isValidPasswd() {
         if (password.isEmpty())
         {
             Toast.makeText(getApplicationContext(),"비밀번호가 비어 있습니다.",Toast.LENGTH_SHORT).show();
@@ -122,14 +132,15 @@ public class NewRegisterActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // 회원가입 성공
-                            Toast.makeText(getApplicationContext(),"회원가입이 완료되었습니다.",Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(),"회원가입이 완료되었습니다.",Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(NewRegisterActivity.this,NewLoginActivity.class);
                             startActivity(intent);
+                            Toast.makeText(getApplicationContext(),"환영합니다.",Toast.LENGTH_LONG).show();
                             finish();
 
                         } else {
                             // 회원가입 실패
-                            Toast.makeText(getApplicationContext(),"회원가입 실패 하였습니다.재시도 바랍니다.",Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(),"이메일 중복 또는 회원가입이 실패하였습니다.",Toast.LENGTH_LONG).show();
                         }
                     }
                 });

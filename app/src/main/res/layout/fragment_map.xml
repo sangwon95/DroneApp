@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="com.google.android.gms.maps.MapFragment">
+        </com.google.android.gms.maps.MapView>
+
+        <ImageButton
+            android:id="@+id/Drone_location"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="70dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/btn_drone_location"
+            android:scaleType="fitCenter"
+            android:src="@drawable/iconfinder_drone3"
+            >
+        </ImageButton>
+        <ImageButton
+            android:id="@+id/logout_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/btn_drone_location"
+            android:src="@drawable/drawable_logout_image_customise"
+            />
+        <Button
+            android:id="@+id/test_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="testView"
+            android:layout_gravity="center"
+            android:layout_marginLeft="150dp"/>
+
+
+
+
+
+
+</RelativeLayout>

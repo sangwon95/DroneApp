@@ -3,4 +3,11 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="colorNew">  #f0c061 </color>
+    <color name="button_drone_back">#F5F3F3</color>
+    <color name="button_upload">#000000</color>
+    <color name="graph_altitude">#FF0000</color>
+    <color name="graph_temperature">#0021FF</color>
+    <color name="graph_finedust">#95FF00</color>
+
 </resources>
