@@ -43,7 +43,7 @@ public class FinedustFragment extends Fragment implements TextView.OnEditorActio
     private ArrayList<String> city = new ArrayList<>();
     private ArrayList<String> data = new ArrayList<>();
 
-    private String key="L5d7%2BsdT%2FI%2B0it2Nr4ck4Z60B2yfmOQ%2Bt26EagXygQCBdkA5%2B4PZLw2puSjEpnem%2B3OO5BO0rTJWYmBGV%2BrlpA%3D%3D";
+    private String key="";
     private int city_number =0;
     private String dataTime,cityName,pm10Value,pm25Value;
     private View view;
@@ -61,10 +61,9 @@ public class FinedustFragment extends Fragment implements TextView.OnEditorActio
         editText.setInputType(InputType.TYPE_CLASS_TEXT);
         editText.setOnEditorActionListener(this);
 
-
-
         return view;
     }
+
     public ArrayList<String> getXmlData(){
 
         String search_city_name = editText.getText().toString();

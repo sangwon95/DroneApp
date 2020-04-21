@@ -23,7 +23,8 @@
             android:drawableLeft="@drawable/drawable_left_image_customise"
             android:imeOptions="actionSearch"
             android:inputType="text"
-            android:layout_marginLeft="40dp"/>
+            android:layout_marginLeft="40dp"
+            />
 
     </LinearLayout>
 <TextView
